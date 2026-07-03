@@ -30,7 +30,7 @@ public class MailService {
 
 	    Mail mail = new Mail();
 	    mail.setName(name);
-	    mail.setSender("@gmail.com");
+	    mail.setSender("nkute611@gmail.com");
 	    mail.setRecipient(to);
 	    mail.setRole(role);
 	    mail.setSentAt(LocalDateTime.now());
