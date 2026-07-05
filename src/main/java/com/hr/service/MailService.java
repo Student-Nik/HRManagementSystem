@@ -19,7 +19,6 @@ public class MailService {
 	private final MailRepository mailRepository;
 	private final JavaMailSender javaMailSender;
 	
-	@Autowired
 	private MailService(MailRepository mailRepository, JavaMailSender javaMailSender) {
 		super();
 		this.mailRepository = mailRepository;

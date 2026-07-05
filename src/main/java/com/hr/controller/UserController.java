@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hr.dto.LoginDTO;
 import com.hr.dto.UserDTO;
 import com.hr.service.UserService;
 
@@ -18,7 +19,6 @@ public class UserController {
 
 	private final UserService userService;
 
-	@Autowired
 	private UserController(UserService userService) {
 		super();
 		this.userService = userService;
@@ -29,4 +29,10 @@ public class UserController {
     public ResponseEntity<Map<String, Object>> registerUser(@Valid @RequestBody UserDTO userDto) {
         return userService.registerUser(userDto);
     }
+	
+	// Login User
+	@PostMapping("/api/auth/login")
+	public ResponseEntity<Map<String, Object>> loginUser(@Valid @RequestBody LoginDTO loginDto){
+		return userService.loginUser(loginDto);
+	}
 }
